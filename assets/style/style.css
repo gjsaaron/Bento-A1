@@ -1,4 +1,8 @@
 :root {
+    --font-sans: 'Syne', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --font-serif: 'Lora', serif;
+    --text-muted: var(--text2);
     --syne: 'Syne', sans-serif;
     --serif: 'Lora', serif;
     --mono: 'DM Mono', monospace;
@@ -266,8 +270,6 @@ section {
 }
 
 .sec-label {
-    margin: left -500px;
-    ;
     font-family: var(--mono);
     font-size: .6rem;
     letter-spacing: .24em;
@@ -1293,7 +1295,7 @@ footer {
 .filter-pill.active {
     background: var(--accent);
     border-color: var(--accent);
-    color: #fff;
+    color: #000;
 }
 
 /* ── EMPTY SLOTS ────────────────────────────── */
