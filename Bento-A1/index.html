@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bento Project</title>
+  <link rel="icon" type="image/png" href="img/Logo.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black !important;
+    }
+
+    @media (min-width: 768px) {
+
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+    }
+
+    .card {
+      min-height: 0;
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 3px #000;
+      background-color: #111;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #111 25%, #1e1e1e 50%, #111 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .card {
+      position: relative;
+    }
+
+    .card img,
+    .card video {
+      position: relative;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card img.loaded,
+    .card video.loaded {
+      opacity: 1;
+    }
+
+    .card.media-loaded::before {
+      display: none;
+    }
+
+    @media (max-width: 767.98px) {
+      .card video {
+        pointer-events: none;
+      }
+
+      .card {
+        height: 20vh !important;
+      }
+
+      .card:has(#c6Img, #c4Img) {
+        height: 40vh !important;
+      }
+
+      .card:has(#c5Vid) {
+        height: 40vh !important;
+      }
+
+      .card:has(#c3Vid) {
+        height: 30vh !important;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+
+      100% {
+        background-position: -200% 0;
+      }
+    }
+
+    #c5Vid {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 60% 30%;
+    }
+
+    #c6Img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 70% 0%;
+    }
+
+    #c3Vid {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body data-bs-theme="dark">
+  <div class="container-fluid">
+    <div class="row g-0">
+
+      <div class="col-12 col-md-6">
+        <div class="row g-0">
+          <div class="col-8">
+            <div class="card" style="height: 25vh;">
+              <img src="img/c1Img.jpg" fetchpriority="high">
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card" style="height: 25vh;">
+              <img src="img/c2Img.png" id="c2Img" loading="lazy">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card overflow-hidden" style="height: 50vh;">
+              <video preload="none" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback
+                controlslist="nodownload nofullscreen noremoteplayback" id="c5Vid" data-lazy-video>
+                <source src="img/c5Vid.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="row g-0">
+          <div class="col-12">
+            <div class="card" style="height: 75vh;">
+              <video preload="none" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback
+                controlslist="nodownload nofullscreen noremoteplayback" id="c3Vid" data-lazy-video>
+                <source src="img/c3Vid.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-2">
+        <div class="row g-0">
+          <div class="col-6 col-md-12">
+            <div class="card" style="height: 25vh;">
+              <img src="img/c4Img.jpg" id="c4Img" loading="lazy">
+            </div>
+          </div>
+          <div class="col-6 col-md-12">
+            <div class="card" style="height: 50vh;">
+              <img src="img/c6Img.jpg" id="c6Img" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-0">
+      <div class="col-6 col-md-2">
+        <div class="card" style="height: 25vh;">
+          <img src="img/c7Img.jpg" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="card" style="height: 25vh;">
+          <img src="img/c8Img.jpg" id="c8Img" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="card" style="height: 25vh;">
+          <img src="img/c9Img.jpg" loading="lazy">
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="card" style="height: 25vh;">
+          <img src="img/c10Img.jpg" id="c10Img" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+
+  <div id="unmuteOverlay" style="
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: opacity 0.4s ease;">
+    <div style="text-align: center; color: white; pointer-events: none;">
+      <div style="font-size: 1.1rem; margin-top: 8px; letter-spacing: 1px;">Click anywhere to play with sound</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('unmuteOverlay').addEventListener('click', function () {
+      document.querySelectorAll('video').forEach(v => v.muted = false);
+      this.style.opacity = '0';
+      this.style.pointerEvents = 'none';
+    });
+
+    document.querySelectorAll('.card img').forEach(img => {
+      const markLoaded = () => {
+        img.classList.add('loaded');
+        img.closest('.card').classList.add('media-loaded');
+      };
+      if (img.complete && img.naturalWidth) {
+        markLoaded();
+      } else {
+        img.addEventListener('load', markLoaded);
+      }
+    });
+
+    const vidObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const vid = entry.target;
+        if (entry.isIntersecting) {
+          vid.preload = 'auto';
+          vid.load();
+          vid.play().catch(() => { });
+
+          vid.addEventListener('canplay', () => {
+            vid.classList.add('loaded');
+            vid.closest('.card').classList.add('media-loaded');
+          }, { once: true });
+
+          vidObserver.unobserve(vid);
+        }
+      });
+    }, {
+      rootMargin: '100px'
+    });
+
+    document.querySelectorAll('[data-lazy-video]').forEach(vid => vidObserver.observe(vid));
+  </script>
+</body>
+
+</html>
