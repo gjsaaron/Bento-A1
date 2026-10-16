@@ -572,10 +572,10 @@ section {
 }
 
 .sec-heading .serif-accent {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    color: var(--accent);
+    font-family: var(--serif) !important;
+    font-style: italic !important;
+    font-weight: 400 !important;
+    color: var(--accent) !important;
 }
 
 .skills-category-grid {
@@ -1237,14 +1237,25 @@ footer {
 
 .webdev-heading {
     padding-top: 10vh;
+    padding-bottom: 5vh;
     font-family: var(--font-sans);
     font-weight: 800;
-    font-size: clamp(1.5rem, 6vw, 7rem);
-    line-height: 0.95;
+    font-size: clamp(2rem, 7vw, 6.5rem);
+    line-height: 0.75;
     letter-spacing: -0.03em;
     color: var(--text);
     text-transform: uppercase;
     text-align: center;
+}
+
+.webdev-heading .serif-accent {
+    margin-bottom: 60px;
+    font-family: var(--serif) !important;
+    font-style: italic !important;
+    font-weight: 400 !important;
+    color: var(--accent) !important;
+    text-transform: none;
+    letter-spacing: -0.02em;
 }
 
 .webdev-subtext {
